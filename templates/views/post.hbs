@@ -1,0 +1,22 @@
+<header class="intro-header" {{#if data.post.image}}style="background-image: url('{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}')"{{/if}}>
+ <div class="container">
+	 <div class="row">
+		 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			 <div class="post-heading">
+				 <h1>{{data.post.title}}</h1>
+				 <span class="meta">{{#if author.name.first}}Posted by {{author.name.first}}{{/if}}</span>
+			 </div>
+		 </div>
+	 </div>
+ </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {{{data.post.content.extended}}}
+      </div>
+    </div>
+  </div>
+</article>
