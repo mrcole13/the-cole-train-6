@@ -32,6 +32,8 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'cookie secret': 'a09jsdlkfmasdjklsdklja99a99asd9f9asd9fj9ajslkdnflknwein',
+	'cloudinary config': 'cloudinary://749796293998997:9BFMNhCtg03sB7CTY2OCSZNPoMc@dwpmayobq',
 });
 
 // Load your project's Models
@@ -59,6 +61,8 @@ keystone.set('nav', {
 
 // Start Keystone to connect to your database and initialise the web server
 
-
+if (keystone.get('env') == 'production'){
+    keystone.set('cookie secret', process.env.COOKIE_SECRET);
+}
 
 keystone.start();
