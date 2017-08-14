@@ -26,7 +26,7 @@ exports = module.exports = function (req, res) {
 			locals.data.post = result;
 			next(err);
 		});
-console.log(q);
+
 	});
 
 	// Load other posts
